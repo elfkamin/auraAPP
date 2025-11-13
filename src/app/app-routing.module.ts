@@ -1,9 +1,19 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-import { Routes } from '@angular/router';
-
-
+const routes: Routes = [
+  {
+    path: '',
+    // Carga el MÓDULO de pestañas
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
+    path: 'radar/:id',
+    // Carga el MÓDULO de radar
+    loadChildren: () => import('./pages/radar/radar.module').then( m => m.RadarPageModule)
+  }
+  // La ruta 'home' ha sido eliminada ya que no se usa.
+];
 
 @NgModule({
   imports: [
@@ -11,15 +21,4 @@ import { Routes } from '@angular/router';
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
-
-export const routes: Routes = [
-  {
-    path: '',
-    loadChildren: () => import('./tabs/tabs.route').then((m) => m.routes),
-  },
-  {
-    path: 'radar/:id', // Página de Radar
-    loadComponent: () => import('./pages/radar/radar.page').then( m => m.RadarPage)
-  },
-];
+export class AppRoutingModule {}

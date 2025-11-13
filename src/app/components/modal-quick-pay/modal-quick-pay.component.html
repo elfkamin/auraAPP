@@ -1,3 +1,28 @@
-<p>
-  modal-quick-pay works!
-</p>
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>QuickPay</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrar()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let item of menu">
+      <ion-icon [name]="item.icono" slot="start" color="primary"></ion-icon>
+      <ion-label>{{ item.nombre }}</ion-label>
+      <!-- Usaremos un pipe de 'currency' en el futuro, ahora texto simple -->
+      <ion-text slot="end" color="medium">{{ item.precio.toFixed(2) }}€</ion-text>
+      <ion-button slot="end" fill="clear" color="primary">
+        <ion-icon name="add-circle"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" (click)="pedir()" class="ion-margin-top" color="primary">
+    Pedir (Total: 0.00€)
+  </ion-button>
+</ion-content>

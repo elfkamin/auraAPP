@@ -1,14 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-modal-crear-grupo',
   templateUrl: './modal-crear-grupo.component.html',
   styleUrls: ['./modal-crear-grupo.component.scss'],
 })
-export class ModalCrearGrupoComponent  implements OnInit {
+export class ModalCrearGrupoComponent {
 
-  constructor() { }
+  constructor(private modalCtrl: ModalController) { }
 
-  ngOnInit() {}
+  cerrar() {
+    this.modalCtrl.dismiss();
+  }
 
+  crear() {
+    // Aquí iría la lógica para crear el grupo
+    this.modalCtrl.dismiss({ 'creado': true });
+  }
 }

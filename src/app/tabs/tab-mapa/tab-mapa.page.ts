@@ -1,25 +1,27 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonIcon } from '@ionic/angular/standalone';
-import { mockLocales } from '../../services/mock-data'; // Importar datos
+import { mockLocales } from '../../services/mock-data';
 
 @Component({
   selector: 'app-tab-mapa',
   templateUrl: './tab-mapa.page.html',
   styleUrls: ['./tab-mapa.page.scss'],
-  standalone: true,
-  imports: [CommonModule, IonHeader, IonToolbar, IonTitle, IonContent, IonIcon],
 })
 export class TabMapaPage {
+
   locales = mockLocales;
 
   constructor(private router: Router) {}
 
+  // Lógica de navegación al radar
   handleLocalClick(local: any) {
-    // Simular check-in en 'The Hive Club'
-    if (local.id === 1) {
-      this.router.navigate(['/radar', 1]);
-    }
+    this.router.navigate(['/radar', local.id]);
+  }
+
+  // Lógica para el color del punto
+  getColor(aura: string): string {
+    if (aura === 'Fiesta Total') return 'var(--ion-color-primary)';
+    if (aura === 'Animado') return 'var(--ion-color-secondary)';
+    return '#3880ff'; // Azul por defecto
   }
 }

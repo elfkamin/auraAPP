@@ -1,3 +1,29 @@
-<p>
-  modal-crear-grupo works!
-</p>
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Crear Nuevo Grupo</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrar()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-input label="Nombre del grupo" labelPlacement="floating" placeholder="Ej: Salida Viernes 🔥"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Invitar Amigos</ion-label>
+    <ion-select multiple="true" placeholder="Seleccionar amigos">
+      <ion-select-option value="sara">Sara</ion-select-option>
+      <ion-select-option value="david">David</ion-select-option>
+      <ion-select-option value="laura">Laura</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="block" (click)="crear()" class="ion-margin-top" color="primary">
+    Crear Grupo
+  </ion-button>
+</ion-content>

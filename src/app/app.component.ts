@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { addIcons } from 'ionicons';
 import {
   mapOutline, peopleOutline, personOutline, flame, pulse, water,
-  arrowBack, wineOutline, shieldHalfOutline
+  arrowBack, wineOutline, shieldHalfOutline, personCircleOutline,
+  walletOutline, logOutOutline, close, add, people, gameControllerOutline,
+  beerOutline, waterOutline, flameOutline, addCircle
 } from 'ionicons/icons';
 
 @Component({
@@ -12,10 +14,12 @@ import {
 })
 export class AppComponent {
   constructor() {
-    // Registrar iconos globalmente
+    // Registrar TODOS los iconos globalmente
     addIcons({
       mapOutline, peopleOutline, personOutline, flame, pulse, water,
-      arrowBack, wineOutline, shieldHalfOutline
+      arrowBack, wineOutline, shieldHalfOutline, personCircleOutline,
+      walletOutline, logOutOutline, close, add, people, gameControllerOutline,
+      beerOutline, waterOutline, flameOutline, addCircle
     });
   }
 }

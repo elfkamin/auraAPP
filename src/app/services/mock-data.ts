@@ -14,3 +14,10 @@ export const mockFriendsRadar = [
   { id: 2, nombre: 'David', top: '50%', left: '75%' },
   { id: 3, nombre: 'Laura', top: '60%', left: '30%' },
 ];
+
+export const mockMenu = [
+  { id: 1, nombre: 'Cerveza', icono: 'beer-outline', precio: 5.00 },
+  { id: 2, nombre: 'Cóctel "Aura"', icono: 'wine-outline', precio: 12.00 },
+  { id: 3, nombre: 'Agua', icono: 'water-outline', precio: 3.00 },
+  { id: 4, nombre: 'Chupito Neón', icono: 'flame-outline', precio: 4.00 },
+];
