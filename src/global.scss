@@ -1,0 +1,64 @@
+/* Tema Oscuro y Neón */
+:root {
+  --ion-background-color: #121212;
+  --ion-text-color: #ffffff;
+  --ion-color-primary: #FF007A; /* Fucsia */
+  --ion-color-secondary: #00E0FF; /* Cian */
+}
+
+/* Clases utilitarias */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  background-image: radial-gradient(#333 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.aura-dot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 0 15px currentColor;
+  cursor: pointer;
+}
+
+.radar-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 40px auto;
+  border: 2px solid #333;
+  border-radius: 50%;
+  background: #1a1a1a;
+  overflow: hidden;
+}
+
+.radar-line {
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background: var(--ion-color-secondary);
+  top: 50%;
+  left: 50%;
+  transform-origin: 0% 0%;
+  animation: spin 3s linear infinite;
+}
+
+.radar-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--ion-color-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--ion-color-primary);
+}
+
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }

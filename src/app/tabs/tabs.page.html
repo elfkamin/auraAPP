@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Aura Mapa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="map-container">
+    <div *ngFor="let local of locales"
+         class="aura-dot"
+         [style.top]="local.top"
+         [style.left]="local.left"
+         [style.color]="getColor(local.aura)"
+         (click)="irAlLocal(local.id)">
+      <ion-icon [name]="local.aura === 'Fiesta Total' ? 'flame' : 'pulse'"></ion-icon>
+    </div>
+  </div>
+</ion-content>
