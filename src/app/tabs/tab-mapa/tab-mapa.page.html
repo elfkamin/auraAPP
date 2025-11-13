@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Aura - Mapa en Vivo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="map-container">
+    <!--
+      NOTA: Usamos *ngFor en lugar de @for para máxima compatibilidad.
+      El error que ves sugiere que tu versión de Angular (quizás v15 o v16)
+      no es compatible con la nueva sintaxis @for (que es de v17+).
+    -->
+    <div
+      *ngFor="let local of locales; trackBy: local.id"
+      class="aura-dot"
+      [style.top]="local.top"
+      [style.left]="local.left"
+      [attr.data-vibe]="local.aura"
+      (click)="handleLocalClick(local)">
+      <div class="aura-dot-inner" [title]="local.nombre">
+        <ion-icon [name]="local.aura === 'Fiesta Total' ? 'flame' : (local.aura === 'Animado' ? 'pulse' : 'water')"></ion-icon>
+      </div>
+    </div>
+  </div>
+</ion-content>
