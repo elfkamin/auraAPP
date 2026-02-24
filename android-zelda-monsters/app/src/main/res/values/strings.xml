@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Zelda Monsters</string>
+    <string name="app_title">Bestiario BOTW/TOTK</string>
+    <string name="loading">Cargando monstruos...</string>
+    <string name="error_loading_data">No se han podido cargar los datos.</string>
+    <string name="error_network">Error de red: %1$s</string>
+    <string name="error_saving_data">Se cargaron, pero hubo un error guardando en local.</string>
+    <string name="dlc_format">DLC: %1$s</string>
+</resources>
